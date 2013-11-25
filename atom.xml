@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[reworkinremote]]></title>
   <link href="http://reworkinremote.github.io/atom.xml" rel="self"/>
   <link href="http://reworkinremote.github.io/"/>
-  <updated>2013-11-25T23:00:12+08:00</updated>
+  <updated>2013-11-25T23:44:52+08:00</updated>
   <id>http://reworkinremote.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[reworkinremote]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hbase SubstringComparator]]></title>
+    <link href="http://reworkinremote.github.io/blog/2013/11/25/hbase-substringcomparator/"/>
+    <updated>2013-11-25T23:07:17+08:00</updated>
+    <id>http://reworkinremote.github.io/blog/2013/11/25/hbase-substringcomparator</id>
+    <content type="html"><![CDATA[<p>One of the hbase scan usage, to filter the rows whose key has a specific substring</p>
+
+<p>The docs link <a href="http://hbase.apache.org/apidocs/org/apache/hadoop/hbase/filter/SubstringComparator.html">Hbase SubstringComparator</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&gt;import org.apache.hadoop.hbase.filter.CompareFilter
+</span><span class='line'>&gt;import org.apache.hadoop.hbase.filter.SubstringComparator
+</span><span class='line'>&gt;scan <span class="s1">&#39;YOUR_TABLE_NAME&#39;</span>, <span class="o">{</span><span class="nv">FILTER</span> <span class="o">=</span>&gt; org.apache.hadoop.hbase.filter.RowFilter.new<span class="o">(</span>CompareFilter::CompareOp.valueOf<span class="o">(</span><span class="s1">&#39;EQUAL&#39;</span><span class="o">)</span>,SubstringComparator.new<span class="o">(</span><span class="s2">&quot;substring_in_key&quot;</span><span class="o">))}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
 </feed>
